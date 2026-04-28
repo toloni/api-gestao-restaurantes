@@ -1,0 +1,56 @@
+### POST Usuários 1
+POST http://localhost:8080/api/v1/usuarios
+Content-Type: application/json
+
+{
+  "nome": "Tiago Jose Oliveira",
+  "email": "tiagojoseoliveira@example.com",
+  "login": "tiagooliveira",
+  "senha": "123456",
+  "tipo": "CLIENTE",
+  "endereco": "Av Paulista 1106, Bela Vista - SP"
+}
+
+### POST Usuários 2
+POST http://localhost:8080/api/v1/usuarios
+Content-Type: application/json
+
+{
+  "nome": "Maria Silva",
+  "email": "maria.silva@example.com",
+  "login": "mariasilva",
+  "senha": "654321",
+  "tipo": "CLIENTE",
+  "endereco": "Rua Augusta 1000, Consolação - SP"
+}
+
+### GET Usuários
+GET http://localhost:8080/api/v1/usuarios
+
+### GET Usuário By Id
+GET http://localhost:8080/api/v1/usuarios/1
+
+### UPDATE Usuário By Id
+PATCH http://localhost:8080/api/v1/usuarios/1
+Content-Type: application/json
+
+{
+  "nome": "Tiago Jose Oliveira",
+  "email": "tiagojose@example.com",
+  "login": "tiago",
+  "tipo": "CLIENTE",
+  "endereco": "Av Paulista 1106, Bela Vista - SP CEP 01311-100"
+}
+
+### DELETE Usuário By Id
+DELETE http://localhost:8080/api/v1/usuarios/3
+
+### PATCH Alterar senha do usuário
+PATCH http://localhost:8080/api/v1/usuarios/1/alterar-senha
+Content-Type: application/json
+
+{
+  "senhaAtual": "123456",
+  "novaSenha": "654321"
+}
+
