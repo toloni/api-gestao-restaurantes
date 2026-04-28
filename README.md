@@ -205,6 +205,3 @@ A documentação OpenAPI pode ser acessada em:
 - **Arquivos de Requisição**: `requests-login.http` e `requests-usuarios.http` contêm exemplos de requisições HTTP para teste.
 - **Versionamento**: API versionada em `v1` (`/api/v1/`).
 - **Paginação**: Endpoints de listagem suportam paginação e filtros.
-
-Para mais detalhes, consulte a documentação do Spring Boot em `HELP.md`.</content>
-<parameter name="filePath">/Users/tiagotoloni/Documents/fiap/techChallenge/api-gestao-gestaurantes/README.md
