@@ -1,0 +1,296 @@
+{
+  "info": {
+    "_postman_id": "afffa339-6ec1-4399-ba5c-5665c6ce45a8",
+    "name": "Usuários",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "6710585"
+  },
+  "item": [
+    {
+      "name": "5. Busca usuário pelo nome",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/usuarios?nome=Joao",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "usuarios"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "1",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "size",
+              "value": "1",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "nome",
+              "value": "Joao",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "1. Cadastro de usuário válido",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "    {\n        \"nome\": \"Tiago Jose\",\n        \"email\": \"tiagojose@example.com\",\n        \"login\": \"tiagojose\",\n        \"senha\": \"123456\",\n        \"tipo\": \"DONO_RESTAURANTE\",\n        \"endereco\": \"Avenida Paulista, 123\"\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/usuarios",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "usuarios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "4. Atualização dados do usuário Sucesso",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "    {\n        \"nome\": \"Joao Silva\",\n        \"email\": \"joaosilva@example.com\",\n        \"login\": \"joaosilva\",\n        \"tipo\": \"CLIENTE\",\n        \"endereco\": \"Alameda Santos, 2000\"\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/usuarios/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "usuarios",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "4. Atualização dados do usuário Erro",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "    {\n\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/usuarios/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "usuarios",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2. Cadastro de usuário e-mail duplicado",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "    {\n        \"nome\": \"Tiago Jose\",\n        \"email\": \"tiagojose@example.com\",\n        \"login\": \"tiagojose\",\n        \"senha\": \"123456\",\n        \"tipo\": \"DONO_RESTAURANTE\",\n        \"endereco\": \"Avenida Paulista, 123\"\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/usuarios",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "usuarios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2. Cadastro de usuário campos faltando",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "    {\n        \"senha\": \"123456\"\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/usuarios",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "usuarios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3. Alteração de Senha com Sucesso",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"senhaAtual\": \"123456\",\n    \"novaSenha\": \"bbbbbb\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/usuarios/1/alterar-senha",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "usuarios",
+            "1",
+            "alterar-senha"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3. Alteração de Senha com Erro",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"senhaAtual\": \"123456\",\n    \"novaSenha\": \"123456\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/usuarios/1/alterar-senha",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "usuarios",
+            "1",
+            "alterar-senha"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "6. Validação de login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"login\": \"tiagojose\",\n    \"senha\": \"123456\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

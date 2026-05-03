@@ -27,6 +27,9 @@ Content-Type: application/json
 ### GET Usuários
 GET http://localhost:8080/api/v1/usuarios
 
+### GET Usuários com filtro e paginação
+GET http://localhost:8080/api/v1/usuarios?nome=Maria&page=1&size=5
+
 ### GET Usuário By Id
 GET http://localhost:8080/api/v1/usuarios/1
 
